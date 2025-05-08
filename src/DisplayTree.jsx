@@ -140,18 +140,16 @@ export function buildBITTreeRootedAtN(n) {
 
 	for (let y = 1; y <= n; y++) {
 		const x = y + lowbit(y);
-		if (x <= n + 1) {
+		if (x <= n) {
 			tree[x].push(y); // y is a child of x
 		}
 	}
 
 	// find root nodes
 	const rootNodes = findRootNodes(tree);
-	if (!rootNodes.includes(n + 1)) {
-		rootNodes.push(n + 1);
-	}
-	for (let i = 1; i < rootNodes.length; i++) {
-		tree[rootNodes[i]].push(rootNodes[i - 1]);
+	console.log("rootNodes", rootNodes);
+	for (let i = 0; i < rootNodes.length; i++) {
+		tree[n + 1].push(rootNodes[i]);
 	}
 
 	return tree;

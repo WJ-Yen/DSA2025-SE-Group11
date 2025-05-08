@@ -44,7 +44,7 @@ function lowbit(x) {
 }
 
 function BIT_add(i, delta, BIT, changes) {
-    while (i <= MAXN) {
+    while (i <= n) {
         BIT[i] += delta;
         changes.push([i, BIT[i]]);
         i += lowbit(i);
@@ -55,13 +55,13 @@ function BIT_sum(i, changes, state) {
     let sum = 0;
     while (i > 0) {
         sum += BIT[i];
-        changes.push([i, BIT[i]]);
+        changes.push([i, BIT[i] * state]);
         i -= lowbit(i);
     }
     return sum;
 }
 
-function construct(input) {
+export function construct(input) {
     n = inputConverter(input, a, MAXN);
     if (n <= 0) return null;
 
@@ -74,7 +74,7 @@ function construct(input) {
     return changes;
 }
 
-function query(input) {
+export function query(input) {
     if (n <= 0) {
         alert("!! Please construct the array first !!");
         return null;
@@ -97,7 +97,7 @@ function query(input) {
     return changes;
 }
 
-function update(input) {
+export function update(input) {
     if (n <= 0) {
         alert("!! Please construct the array first !!");
         return null;
@@ -119,7 +119,7 @@ function update(input) {
     return changes;
 }
 
-function get_N()
+export function get_N()
 {
     return n;
 }

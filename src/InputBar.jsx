@@ -7,7 +7,7 @@ import UpdateChanges from './UpdateChanges.jsx';
 import greenIcon from './assets/Next_Green.png';
 import greyIcon from './assets/Next_Grey.png';
 
-import { getN, construct, query, update } from './BIT.js';
+import { get_N, construct, query, update } from './BIT.js';
 
 function convertChanges(changes) {
     const convertedChanges = changes.map((change) => {
@@ -42,12 +42,15 @@ const handleConstruct = async (
     const changes = convertChanges(result);
     console.log("changes", changes);
   
-    const n = getN();
+    const n = get_N();
     setN(n);
   
     const rawTree = buildBITTreeRootedAtN(n);
+    console.log("rawTree", rawTree);
     const initialTree = buildTreeStructure(n + 1, rawTree, n + 1);
+    console.log("initialTree", initialTree);
     const skewedTree = skewCoordinates(initialTree, n + 1, containerWidth, containerHeight);
+    console.log("skewedTree", skewedTree);
     
     // Pass step mode parameters
     const updated = UpdateChanges(
