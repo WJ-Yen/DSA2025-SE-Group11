@@ -123,11 +123,13 @@ function lowbit(x) {
 	return x & -x;
 }
 
-function findRootNodes(tree) {
+function findRootNodes(tree, n) {
 	const allNodes = new Set(Object.keys(tree).map(Number));
 	const childNodes = new Set(Object.values(tree).flat());
+	console.log("allNodes", allNodes);
+	console.log("childNodes", childNodes);
 	const rootNodes = [...allNodes].filter(
-		(node) => tree[node].length > 0 && !childNodes.has(node)
+		(node) => !childNodes.has(node) && (node !== n + 1) && (node !== 0)
 	);
 	return rootNodes;
 }  
@@ -137,6 +139,7 @@ export function buildBITTreeRootedAtN(n) {
 
 	// Initialize empty array for each node
 	for (let x = 0; x <= n + 1; x++) tree[x] = [];
+	console.log("tree", tree);
 
 	for (let y = 1; y <= n; y++) {
 		const x = y + lowbit(y);
@@ -144,9 +147,11 @@ export function buildBITTreeRootedAtN(n) {
 			tree[x].push(y); // y is a child of x
 		}
 	}
+	console.log("n", n);
+	console.log("tree", tree);
 
 	// find root nodes
-	const rootNodes = findRootNodes(tree);
+	const rootNodes = findRootNodes(tree, n);
 	console.log("rootNodes", rootNodes);
 	for (let i = 0; i < rootNodes.length; i++) {
 		tree[n + 1].push(rootNodes[i]);
@@ -202,8 +207,8 @@ export function skewCoordinates(node, n, containerWidth, containerHeight) {
 // Assign coordinates to the nodes in a skewed manner
 function assignSkewedCoordinates(root, depth = 0, scalex = 50, scaley = 80, initialx = 0, initialy = 30) {
 	const node = { ...root };
-	const nodeName = Number(node.name);
-    node.x = initialx + nodeName * scalex;
+	const nodeName = node.name;
+	node.x = initialx + nodeName * scalex;
 	node.y = initialy + depth * scaley;
 
 	if (node.children) {

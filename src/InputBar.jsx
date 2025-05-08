@@ -34,23 +34,23 @@ const handleConstruct = async (
 
     console.log("handle construct");
     const result = construct(inputStr);
-    console.log("inputStr", inputStr);
-    console.log("result", result);
+    // console.log("inputStr", inputStr);
+    // console.log("result", result);
 
     if (result === null) return;
 
     const changes = convertChanges(result);
-    console.log("changes", changes);
+    // console.log("changes", changes);
   
     const n = get_N();
     setN(n);
   
     const rawTree = buildBITTreeRootedAtN(n);
-    console.log("rawTree", rawTree);
+    // console.log("rawTree", rawTree);
     const initialTree = buildTreeStructure(n + 1, rawTree, n + 1);
-    console.log("initialTree", initialTree);
+    // console.log("initialTree", initialTree);
     const skewedTree = skewCoordinates(initialTree, n + 1, containerWidth, containerHeight);
-    console.log("skewedTree", skewedTree);
+    // console.log("skewedTree", skewedTree);
     
     // Pass step mode parameters
     const updated = UpdateChanges(
