@@ -1,2 +1,3 @@
 ## How to run
-- in the CLI run `npm run dev`
+- Install js (https://nodejs.org/en/download)
+- In the CLI run `npm run dev`
