@@ -147,6 +147,9 @@ export function buildBITTreeRootedAtN(n) {
 
 	// find root nodes
 	const rootNodes = findRootNodes(tree);
+	if (!rootNodes.includes(n + 1)) {
+		rootNodes.push(n + 1);
+	}
 	for (let i = 1; i < rootNodes.length; i++) {
 		tree[rootNodes[i]].push(rootNodes[i - 1]);
 	}
@@ -191,13 +194,6 @@ export function skewCoordinates(node, n, containerWidth, containerHeight) {
 
 	const scalex = containerWidth / (maxIndex + 2);
 	const scaley = containerHeight / (maxDepth + 1);
-
-	console.log("containerWidth", containerWidth);
-	console.log("containerHeight", containerHeight);
-	console.log("maxIndex", maxIndex);
-	console.log("maxDepth", maxDepth);
-	console.log("scalex", scalex);
-	console.log("scaley", scaley);
 
 	// console.log("tree in skewCoordinates", node);
 	const skewedTree = assignSkewedCoordinates(node, 0, scalex, scaley);

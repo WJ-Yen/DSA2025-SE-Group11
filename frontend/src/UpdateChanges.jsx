@@ -4,13 +4,9 @@ export function updateNodeValue(node, targetIndex, newValue, isQuery = false, se
         node.value = Math.abs(newValue);
         node.color = (newValue > 0)? "#ff0000": "#3A59D1"; // Highlight the updated node
 
-        console.log("Node updated:", node.name, "to", newValue);
-        console.log("isQuery:", isQuery);
-
         // If it's a query and a callback is provided, update the query result
         if (isQuery) {
             setQueryResult(prevResult => prevResult + newValue);
-            // console.log("Query result updated:", prevResult + newValue);
         }
 
         return true; // Found and updated

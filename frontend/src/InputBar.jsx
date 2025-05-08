@@ -7,6 +7,16 @@ import UpdateChanges from './UpdateChanges.jsx';
 import greenIcon from './assets/Next_Green.png';
 import greyIcon from './assets/Next_Grey.png';
 
+import { getN, construct, query, update } from './BIT.js';
+
+function convertChanges(changes) {
+    const convertedChanges = changes.map((change) => {
+        const [index, value] = change;
+        return { index, value };
+    });
+    return convertedChanges;
+}
+
 const handleConstruct = async (
     inputStr, 
     setTreeData, 
@@ -23,19 +33,16 @@ const handleConstruct = async (
     setCurrentOperation("construct");
 
     console.log("handle construct");
+    const result = construct(inputStr);
     console.log("inputStr", inputStr);
+    console.log("result", result);
 
-    const changes = [
-        { index: 1, value: 1 },
-        { index: 2, value: 2 },
-        { index: 3, value: 3 },
-        { index: 4, value: 4 },
-        { index: 5, value: 5 },
-        { index: 6, value: 6 },
-        { index: 7, value: 7 }
-    ];
+    if (result === null) return;
+
+    const changes = convertChanges(result);
+    console.log("changes", changes);
   
-    const n = 7;
+    const n = getN();
     setN(n);
   
     const rawTree = buildBITTreeRootedAtN(n);
@@ -71,14 +78,14 @@ const handleQuery = async (
 
     console.log("handle query");
     console.log("inputStr", inputStr);
+    const result = query(inputStr);
+    console.log("changes", result);
+    if (result === null) return;
+
+    const changes = convertChanges(result);
+    console.log("changes", changes);
 
     setQueryResult(0);
-
-    const changes = [
-        { index: 1, value: 5 },
-        { index: 2, value: 3 },
-        { index: 3, value: -3 }
-    ];
 
     const updated = UpdateChanges(
         treeData, 
@@ -108,11 +115,12 @@ const handleUpdate = async (
     setCurrentOperation("update");
     console.log("handle modify");
     console.log("inputStr", inputStr);
+    const result = update(inputStr);
+    console.log("changes", result);
+    if (result === null) return;
 
-    const changes = [
-        { index: 1, value: 5 },
-        { index: 2, value: 3 }
-    ];
+    const changes = convertChanges(result);
+    console.log("changes", changes);
 
     const updated = UpdateChanges(
         treeData, 
