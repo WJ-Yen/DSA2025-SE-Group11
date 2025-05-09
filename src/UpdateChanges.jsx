@@ -2,7 +2,7 @@
 export function updateNodeValue(node, targetIndex, newValue, isQuery = false, setQueryResult = null) {
     if (parseInt(node.name) === targetIndex) {
         node.value = Math.abs(newValue);
-        node.color = (newValue > 0)? "#ff0000": "#3A59D1"; // Highlight the updated node
+        node.color = (newValue >= 0)? "#ff0000": "#3A59D1"; // Highlight the updated node
 
         // If it's a query and a callback is provided, update the query result
         if (isQuery) {
