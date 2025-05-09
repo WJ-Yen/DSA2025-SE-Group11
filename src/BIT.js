@@ -16,13 +16,13 @@ function inputConverter(inputStr, arr, maxSize) {
     }
 
     for (let i = 0; i < nums.length; i++) {
-        if (!/^\d+$/.test(nums[i])) {
+        if (!/^-?\d+$/.test(nums[i])) {
             alert("!! Please enter only numbers !!");
             return -1;
         }
         let num = parseInt(nums[i]);
         if (num < 0 || num > MAXNUM) {
-            alert('!! Please enter the number in 0~${MAXNUM} !!');
+            alert(`!! Please enter the number in 0~${MAXNUM} !!`);
             return -1;
         }
         arr[i] = num;
