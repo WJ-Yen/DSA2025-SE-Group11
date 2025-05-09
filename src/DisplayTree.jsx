@@ -28,7 +28,7 @@ function renderNodes(node) {
 	const nodes = [];
 
 	function formatIndexWithBinary(i) {
-		return `${i} (${i.toString(2)}\u2082)`;
+		return `(${i.toString(2)}\u2082)`;
 	}
 
 	function traverse(cur) {
@@ -49,8 +49,18 @@ function renderNodes(node) {
 
 			{/* Index (name) outside the circle */}
 			<text
-				x={-20}
+				x={0}
 				y={30}
+				textAnchor="middle"
+				fontSize="12"
+				fill="red"
+			>
+				{cur.name}
+			</text>
+			<text
+				x={0}
+				y={40}
+				textAnchor="middle"
 				fontSize="12"
 				fill="red"
 			>
