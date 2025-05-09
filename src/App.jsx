@@ -104,7 +104,7 @@ export default function App() {
             {/* Query Result Block */}
             <div className="absolute bottom-10 left-10 p-4 bg-gray-200 rounded-md shadow-md">
                 <h3 className="text-lg font-bold">Query Result</h3>
-                <p className="text-base">{queryResult || "No query performed yet."}</p>
+                <p className="text-base">{queryResult != null? queryResult: "No query performed yet."}</p>
             </div>
         </div>
     );

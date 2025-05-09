@@ -80,9 +80,7 @@ const handleQuery = async (
     setCurrentOperation("query");
 
     console.log("handle query");
-    console.log("inputStr", inputStr);
     const result = query(inputStr);
-    console.log("changes", result);
     if (result === null) return;
 
     const changes = convertChanges(result);
