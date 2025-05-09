@@ -22,7 +22,7 @@ function inputConverter(inputStr, arr, maxSize) {
         }
         let num = parseInt(nums[i]);
         if (num < 0 || num > MAXNUM) {
-            alert("!! Please enter the number inside the range !!");
+            alert('!! Please enter the number in 0~${MAXNUM} !!');
             return -1;
         }
         arr[i] = num;
@@ -84,6 +84,10 @@ export function query(input) {
     if (inputConverter(input, op, 2) <= 0) return null;
 
     let l = op[0], r = op[1];
+    if (!r) {
+	alert("!! Please enter at least 2 number !!");
+	return null;
+    }
     if (l < 1 || l > n || r < 1 || r > n) {
         alert("!! Please enter the number inside the range !!");
         return null;
@@ -107,6 +111,10 @@ export function update(input) {
     if (inputConverter(input, op, 2) <= 0) return null;
 
     let i = op[0], x = op[1];
+    if (!x) {
+	alert("!! Please enter at least 2 number !!");
+	return null;
+    }
     if (i < 1 || i > n || x < 0 || x > MAXNUM) {
         alert("!! Please enter the number inside the range !!");
         return null;
