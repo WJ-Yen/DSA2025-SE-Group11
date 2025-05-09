@@ -68,8 +68,15 @@ export function construct(input) {
     BIT.fill(0);
 
     let changes = [];
-    for (let i = 0; i < n; i++) {
-        BIT_add(i + 1, a[i], BIT, changes);
+    for (let i = 1; i <= n; i++) {
+        // BIT_add(i + 1, a[i], BIT, changes);
+        BIT[i] += a[i - 1];
+        changes.push([i, BIT[i]]);
+        let x = i + lowbit(i);
+        if (x <= n) {
+            BIT[x] += BIT[i];
+            changes.push([x, BIT[x]]);
+        }
     }
     return changes;
 }
