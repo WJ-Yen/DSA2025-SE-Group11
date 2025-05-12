@@ -1,8 +1,3 @@
----
-title: BIT README
-
----
-
 # BIT Documatation
 ## Introduction
 This program demonstrates how binary indexed tree (BIT) works. It provides a visual representation of the BIT structure and the processes about constructing, querying, and updating in BIT. <br>
