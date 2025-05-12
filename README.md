@@ -57,6 +57,11 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
     - Otherwise, continue the loop. (Node i turns white)
 4. After the loop, construction complete.
 
+#### Complexity
+- Time complexity: O(n). In step-3 loop n times, each loop doing fixed operations.
+- Space complexity: O(n+1). There are n+1 new nodes.
+
+
 ### Query
 1. Define a function **Sum(i)**, return the prefix sum from index 1 to i.
     - Initialize ```sum = 0```. Loop while i > 0:
@@ -66,6 +71,9 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
     - For example, if the input array is {1,2,3,4,5}, Sum(3) = Node[3] + Node[2] = 3 + 3 = 6.
 2. Parse the input into two number, the smaller number is left_index, the other is right_index.
 3. If left_index is equal to 1, return ```Sum(right_index)```. Otherwise, return ```Sum(right_index) - Sum(left_index - 1)``` 
+#### Complexity
+- Time complexity: O(log n). In the Sum(i) function, it will loop log<sub>2</sub>(n) times (decimal number n will have at most log<sub>2</sub>(n) bit in binary), each loop doing fixed operations.
+- Space complexity: O(1). No new node needs to be declared.
 
 ### Update
 1. Parse the input into two number, index and value, respectively.
@@ -74,6 +82,9 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
     - ```Node[index] += value - original_value``` (Node index turns red)
     - ```index += lowbit(index)``` (Node index turns white)
 4. After the loop, update complete.
+#### Complexity
+- Time complexity: O(log n). In step-3 loop log(n) times, each loop doing fixed operations.
+- Space complexity: O(1). No new node needs to be declared.
 
 ### Example
 1. Construct(1,2,3,4,5,6,7,8)
