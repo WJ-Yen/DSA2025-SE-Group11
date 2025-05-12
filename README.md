@@ -44,7 +44,7 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
 
 ## Operation Process Explanation
 - Define a function **lowbit(i)** return the least significant (or smallest/ rightmost) "1" in i in binary.
-For example, 5 = (101)~2~, lowbit(5) = 1; 8 = (1000)~2~, lowbit(8) = 8
+For example, 5 = (101)<sub>2</sub>, lowbit(5) = 1; 8 = (1000)<sub>2</sub>, lowbit(8) = 8
 ### Construct
 1. The program parse the input into array with size n.
 2. Draw a tree with n+1 node.
