@@ -72,7 +72,7 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
 2. Parse the input into two number, the smaller number is left_index, the other is right_index.
 3. If left_index is equal to 1, return ```Sum(right_index)```. Otherwise, return ```Sum(right_index) - Sum(left_index - 1)``` 
 #### Complexity
-- Time complexity: O(log n). In the Sum(i) function, it will loop log<sub>2</sub>(n) times (decimal number n will have at most log<sub>2</sub>(n) bit in binary), each loop doing fixed operations.
+- Time complexity: O(log n). In the Sum(i) function, it will loop log<sub>2</sub>(n) times (decimal number n will have at most log<sub>2</sub>(n)+1 bit in binary), each loop doing fixed operations.
 - Space complexity: O(1). No new node needs to be declared.
 
 ### Update
