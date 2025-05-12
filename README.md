@@ -32,10 +32,10 @@ Now, user can choose to perform reconstruction, querying the sum of certain rang
 
 Furthermore, we design the **"Step-by-Step"** feature for user to understand how the BIT work more easily.
 - To enable the step-by-step mode, click the "Step-by-Step" switch at the bottom. The button at the bottom-right (which is "Next" button) will turn green.
-<br>*If there is a operation ongoing, switch on step-by-step mode will __not__ stop current animation. It only affect the operations start after the mode is on.*
+<br>*If there is an operation ongoing, switch on step-by-step mode will __not__ stop current animation. It only affect the operations start after the mode is on.*
 - When the step-by-step mode is enable, all the operation will stop after updating/ querying a value. Until user double-click the green "Next" button, it will show the next step of operation.
 - If the operation has not finish yet, the "Next" button will be bright green. Otherwise, it will be dim green.
-- If one wants to disable step-by-step mode, simply switchs off the "Step-by-Step" switch. **Please don't switch off while there is a operation ongoing.**
+- If one wants to disable step-by-step mode, simply switchs off the "Step-by-Step" switch. **Please don't switch off while there is an operation ongoing.**
 
 ## State Explanation
 - Node Colors: 
