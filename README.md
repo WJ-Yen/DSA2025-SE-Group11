@@ -22,17 +22,17 @@ If the input is valid, after clicking the button,  there will be a tree appears 
 
 Now, user can choose to perform reconstruction, querying the sum of certain range, or updating value of a certain node.
 - **Reconstruct the BIT**
-Input new multiset and click the 'Construct' button. *It will overwrite the current structure.*
+<br>Input new multiset and click the 'Construct' button. *It will overwrite the current structure.*
 - **Query the sum of certain range**
-Input 2 numbers represent the head index and tail index for querying. For example, {2,5} means query the sum from index 2 to index 5.
-After input the numbers, click "Query" button, the tree will display the process of querying, and the query result will show at the bottom-left of the screen.
+<br>Input 2 numbers represent the head index and tail index for querying. For example, {2,5} means query the sum from index 2 to index 5.
+<br>After input the numbers, click "Query" button, the tree will display the process of querying, and the query result will show at the bottom-left of the screen.
 - **Update value of a certain node**
-Input 2 numbers which represent the index of the node you would like to change and the value you would like it to change into, respectively. *(Note that the value should be within 0~256.)*
-After input the numbers, click "Update" button, the tree will display the process of updating.
+<br>Input 2 numbers which represent the index of the node you would like to change and the value you would like it to change into, respectively. *(Note that the value should be within 0~256.)*
+<br>After input the numbers, click "Update" button, the tree will display the process of updating.
 
 Furthermore, we design the **"Step-by-Step"** feature for user to understand how the BIT work more easily.
 - To enable the step-by-step mode, click the "Step-by-Step" switch at the bottom. The button at the bottom-right (which is "Next" button) will turn green.
-*If there is a operation ongoing, switch on step-by-step mode will __not__ stop current animation. It only affect the operations start after the mode is on.*
+<br>*If there is a operation ongoing, switch on step-by-step mode will __not__ stop current animation. It only affect the operations start after the mode is on.*
 - When the step-by-step mode is enable, all the operation will stop after updating/ querying a value. Until user double-click the green "Next" button, it will show the next step of operation.
 - If the operation has not finish yet, the "Next" button will be bright green. Otherwise, it will be dim green.
 - If one wants to disable step-by-step mode, simply switchs off the "Step-by-Step" switch. **Please don't switch off while there is a operation ongoing.**
@@ -44,7 +44,7 @@ Furthermore, we design the **"Step-by-Step"** feature for user to understand how
 
 ## Operation Process Explanation
 - Define a function **lowbit(i)** return the least significant (or smallest/ rightmost) "1" in i in binary.
-For example, 5 = (101)<sub>2</sub>, lowbit(5) = 1; 8 = (1000)<sub>2</sub>, lowbit(8) = 8
+<br>For example, 5 = (101)<sub>2</sub>, lowbit(5) = 1; 8 = (1000)<sub>2</sub>, lowbit(8) = 8
 ### Construct
 1. The program parse the input into array with size n.
 2. Draw a tree with n+1 node.
